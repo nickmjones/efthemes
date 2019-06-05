@@ -4,10 +4,14 @@
 --------------------------------------------------------
 */
 
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+
 :root {
-  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-  "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-headings: 'Playfair Display', Times, Georgia, serif;
+  --font-family-base: Times, Georgia, serif;
+  --theme-color-primary: #46bcb7;
+  --theme-color-secondary: #ff715b;
+  --theme-color-tertiary: #4c5454;
 }
 
 /*
@@ -24,7 +28,8 @@ html {
 body {
   font-family: var(--font-family-base);
   color: #333;
-  background-color: #f2f2f2;
+  background: var(--theme-color-primary) url('../images/giantsteps/nyc_skyline_bg.png') -50vh center no-repeat;
+  background-attachment: fixed;
 }
 
 * {
@@ -40,15 +45,47 @@ body {
 */
 
 p {
-  font-size: 1.25rem;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
   line-height: 1.25;
 }
 h1, h2, h3, h4, h5 {
+  font-family: var(--font-family-headings);
   line-height: 1.25;
   margin-bottom: .5rem;
 }
 h1 {
   font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+h2 {
+  font-size: 3.25rem;
+}
+h3 {
+  font-size: 2.75rem;
+}
+h4 {
+  font-size: 2.25rem;
+}
+h5 {
+  font-size: 2rem;
+}
+ul.plain {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  list-style: none;
+}
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+table.simple tr td {
+  line-height: 1.25;
+  padding: .2rem;
+}
+table.simple tr:nth-child(even) td {
+  background: #efefef;
 }
 
 /*
@@ -103,46 +140,28 @@ a:after {
 }
 
 .wrapper {
-  width: 1024px;
+  width: 80vw;
   padding: 0 4rem 4rem;
   margin: auto;
 }
 
 .grid {
   width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.group {
-  display: flex;
-  padding: 0;
-  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
 }
 .item {
-  overflow: hidden;
-  background: #fff;
   padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+  background: rgba(255,255,255,0.3);
 }
-.item:nth-child(odd) {
-  margin-right: 1rem;
-}
-.item img {
-  display: block;
-  object-fit: cover;
-}
-/* Modifiers */
-.item--full_width {
-  grid-column: span 2;
-}
-.item--no_padding {
-  padding: 0;
+.item--larger {
+  grid-column: 1 / span 2;
 }
 footer {
   padding: 4rem;
+  margin: auto;
+  width: 80vw;
 }
 
 @media screen and (max-width: 600px) {
