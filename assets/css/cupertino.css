@@ -170,13 +170,18 @@ footer {
   html {
     font-size: 16px;
   }
+  .wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem;
+  }
   .flex-grid {
     display: flex;
     flex-flow: row wrap;
     padding: 0;
     justify-content: space-between;
   }
-  .flex-grid:nth-child(even) {
+  .flex-grid:nth-child(even) { /* this makes the rows alternate */
     flex-direction: row-reverse;
   }
   .item {
@@ -196,5 +201,6 @@ footer {
   .wrapper {
     max-width: 1200px;
     margin: auto;
+    padding: 4rem;
   }
 }
