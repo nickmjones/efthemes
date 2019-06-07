@@ -1,0 +1,217 @@
+/*
+--------------------------------------------------------
+# Vars/Externals
+--------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Fjalla+One&display=swap');
+
+:root {
+  --font-family-headings: 'Fjalla One', Times, Georgia, serif;
+  --font-family-base: 'Lato', Helvetica, Arial, sans-serif;
+  --theme-color-primary: #F7B267;
+  --theme-color-secondary: #F25C54;
+  --theme-color-tertiary: #009FB7;
+}
+
+/*
+--------------------------------------------------------
+# Setup
+--------------------------------------------------------
+*/
+
+html {
+  font-size: 13px;
+  line-height: 1;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: #333;
+  background: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*
+--------------------------------------------------------
+# Type/Fonts
+--------------------------------------------------------
+*/
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-family-headings);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+  font-weight: 400;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+ul.plain {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  list-style: none;
+}
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+table.simple tr td {
+  line-height: 1.25;
+  padding: .5rem;
+}
+table.simple tr:nth-child(even) td {
+  background: #efefef;
+}
+.ghost { /* fades type */
+  color: #999;
+  font-weight: 400;
+}
+
+/*
+--------------------------------------------------------
+# Links
+--------------------------------------------------------
+*/
+
+a {
+  text-decoration: none;
+  color: var(--theme-color-primary);
+}
+a.with-pointer {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+a.with-pointer:after {
+  content: " →";
+}
+
+/*
+--------------------------------------------------------
+# Blocks
+--------------------------------------------------------
+*/
+
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background: url('https://source.unsplash.com/user/erondu/600x600') top center no-repeat;
+  background-size: fill;
+  width: 100vw;
+  padding: 6rem 2rem 4rem;
+}
+
+header h1 {
+  color: #fff;
+}
+
+header h2 {
+  color: rgba(255,255,255,0.6);
+}
+
+section {
+  background: var(--theme-color-secondary);
+  padding: 2rem;
+  position: relative;
+  border: 1px dotted yellow;
+}
+section aside {
+  width: 460px;
+  height: 610px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+section aside img {
+  display: block;
+  height: 100%;
+}
+section figure {
+  width: 240px;
+  background: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: calc(240px + 2rem);
+  bottom: 4rem;
+}
+
+footer {
+  padding: 4rem;
+  text-align: center;
+}
+
+/*
+--------------------------------------------------------
+# Buttons
+--------------------------------------------------------
+*/
+
+.btn {
+  font-size: 1.5rem;
+  text-align: center;
+  background: rgba(228,86,47,0.5);
+  padding: 1rem 2rem;
+  color: #fff;
+  transition: all 0.20s ease-in-out;
+  cursor: pointer;
+  margin: 2rem 0;
+  border: 0;
+}
+.btn:hover {
+  background: rgba(228,86,47,0.9);
+}
+.btn:active {
+  background: rgba(228,143,47,0.9);
+  color: #000;
+}
+
+/*
+--------------------------------------------------------
+# Responsive
+--------------------------------------------------------
+*/
+
+@media screen and (min-width: 601px) {
+  .flex-grid {
+    display: flex;
+    flex-flow: row nowrap;
+    background: #fff;
+    margin: 2rem;
+    box-shadow: 0 20px 90px #676264;
+    max-width: 980px;
+  }
+  .col {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 2rem;
+  }
+  .col figure {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1401px) {
+  .flex-grid {
+    max-width: 1200px;
+  }
+}
