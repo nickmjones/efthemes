@@ -28,7 +28,7 @@ html {
 body {
   font-family: var(--font-family-base);
   color: #333;
-  background: #fff;
+  background: var(--theme-color-secondary);
 }
 
 * {
@@ -109,11 +109,12 @@ a.with-pointer:after {
   width: 100vw;
   display: flex;
   justify-content: center;
+  flex-flow: column wrap;
 }
 
 header {
   background: url('https://source.unsplash.com/user/erondu/600x600') top center no-repeat;
-  background-size: fill;
+  background-size: cover;
   width: 100vw;
   padding: 6rem 2rem 4rem;
 }
@@ -127,10 +128,8 @@ header h2 {
 }
 
 section {
-  background: var(--theme-color-secondary);
   padding: 2rem;
   position: relative;
-  border: 1px dotted yellow;
 }
 section aside {
   width: 460px;
@@ -191,22 +190,21 @@ footer {
 */
 
 @media screen and (min-width: 601px) {
-  .flex-grid {
-    display: flex;
-    flex-flow: row nowrap;
+  section {
+    width: 720px;
+    margin: auto;
+  }
+  section aside {
+    width: 640px;
+    height: 720px;
+  }
+  section figure {
+    width: 400px;
     background: #fff;
-    margin: 2rem;
-    box-shadow: 0 20px 90px #676264;
-    max-width: 980px;
-  }
-  .col {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
     padding: 2rem;
-  }
-  .col figure {
-    flex: 1;
+    position: absolute;
+    left: calc(240px + 4rem);
+    bottom: 4rem;
   }
 }
 
