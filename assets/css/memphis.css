@@ -1,0 +1,234 @@
+/*
+--------------------------------------------------------
+# Vars/Externals
+--------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap');
+
+:root {
+  --font-family-headings: 'Montserrat', Helvetica, Arial, sans-serif;
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  --theme-color-primary: #5438dc;
+  --theme-color-secondary: #fbb13c;
+  --theme-color-tertiary: #73d2de;
+}
+
+/*
+--------------------------------------------------------
+# Setup
+--------------------------------------------------------
+*/
+
+html {
+  font-size: 13px;
+  line-height: 1;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background: var(--theme-color-primary);
+}
+
+/*
+--------------------------------------------------------
+# Type/Fonts
+--------------------------------------------------------
+*/
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-family-headings);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+h1 {
+  font-size: 4.209rem;
+}
+h2 {
+  font-size: 3.157rem;
+}
+h3 {
+  font-size: 2.369rem;
+}
+h4 {
+  font-size: 1.777rem;
+}
+h5 {
+  font-size: 1.333rem;
+}
+ul.plain {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  list-style: none;
+}
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+table.simple tr td {
+  line-height: 1.25;
+  padding: .5rem;
+}
+table.simple tr:nth-child(even) td {
+  background: rgba(255,255,255,0.05);
+}
+.ghost { /* fades type */
+  color: #999;
+  font-weight: 400;
+}
+.is-centered {
+  text-align: center;
+}
+
+/*
+--------------------------------------------------------
+# Links
+--------------------------------------------------------
+*/
+
+a {
+  text-decoration: none;
+  color: var(--theme-color-secondary);
+}
+a.with-pointer {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+a.with-pointer:after {
+  content: " →";
+}
+
+/*
+--------------------------------------------------------
+# Blocks
+--------------------------------------------------------
+*/
+
+.wrapper {
+  margin: auto;
+}
+
+section { /* centers content */
+  margin: auto;
+  padding: 4rem;
+}
+
+header {
+  width: 100vw;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+header aside {
+  padding: 3rem;
+}
+header figure {
+  overflow: hidden;
+  padding: 2rem;
+}
+header figure img {
+  width: 300px;
+}
+
+header h1 {
+  color: #333;
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+header h3 {
+  color: rgba(0,0,0,0.6);
+}
+
+.flex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.flex-grid .col {
+  padding: 4rem;
+  color: rgba(255,255,255,0.7);
+}
+
+footer {
+  padding: 4rem;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+}
+
+footer p {
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+/*
+--------------------------------------------------------
+# Buttons
+--------------------------------------------------------
+*/
+
+.btn {
+  font-size: 1.5rem;
+  text-align: center;
+  background: var(--theme-color-primary);
+  padding: 1rem 2rem;
+  color: #fff;
+  transition: all 0.20s ease-in-out;
+  cursor: pointer;
+  margin: 2rem 0;
+  border: 0;
+}
+.btn:active {
+  background: var(--theme-color-tertiary);
+  color: #000;
+}
+
+/*
+--------------------------------------------------------
+# Responsive
+--------------------------------------------------------
+*/
+
+@media screen and (min-width: 601px) {
+  header {
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    padding: 6rem 4rem;
+  }
+  .is-centered {
+    padding: 2rem 8rem;
+  }
+}
+
+@media screen and (min-width: 1401px) {
+  header,
+  section,
+  .flex-grid,
+  footer {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
