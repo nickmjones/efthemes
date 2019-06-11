@@ -224,6 +224,23 @@ footer p {
 --------------------------------------------------------
 */
 
-@media screen and (min-width: 601px) {}
+@media screen and (min-width: 601px) {
+  header {
+    padding: 8rem;
+  }
+  .intro {
+    padding: 2rem 15vw;
+  }
+  .flex-grid {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 4rem;
+  }
+  .flex-grid .col {
+    padding: 4rem;
+    text-align: left;
+    flex: 1;
+  }
+}
 
 @media screen and (min-width: 1401px) {}
