@@ -1,0 +1,206 @@
+/*
+--------------------------------------------------------
+# Vars/Externals
+--------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:|Fira+Sans&display=swap');
+
+:root {
+  --font-family-headings: 'Playfair Display', Helvetica, Arial, sans-serif;
+  --font-family-base: "Fira Sans", "Helvetica Neue", sans-serif;
+}
+
+/*
+--------------------------------------------------------
+# Setup
+--------------------------------------------------------
+*/
+
+html {
+  font-size: 13px;
+  line-height: 1;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background: #111;
+  color: #d7d7d7;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background: var(--theme-color-primary);
+}
+
+/*
+--------------------------------------------------------
+# Type/Fonts
+--------------------------------------------------------
+*/
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-family-headings);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+  font-size: 400;
+}
+h1 {
+  font-size: 4.209rem;
+}
+h2 {
+  font-size: 3.157rem;
+}
+h3 {
+  font-size: 2.369rem;
+}
+h4 {
+  font-size: 1.777rem;
+}
+h5 {
+  font-size: 1.333rem;
+}
+ul.plain {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  list-style: none;
+}
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+table.simple tr td {
+  line-height: 1.25;
+  padding: .5rem;
+}
+table.simple tr:nth-child(even) td {
+  background: rgba(255,255,255,0.05);
+}
+.ghost { /* fades type */
+  color: #999;
+  font-weight: 400;
+}
+.is-centered {
+  text-align: center;
+}
+
+/*
+--------------------------------------------------------
+# Links
+--------------------------------------------------------
+*/
+
+a {
+  text-decoration: none;
+  color: var(--theme-color-secondary);
+}
+a.with-pointer {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+a.with-pointer:after {
+  content: " →";
+}
+
+/*
+--------------------------------------------------------
+# Blocks
+--------------------------------------------------------
+*/
+
+header {
+  background: #fff url('https://source.unsplash.com/xpcUYaZtplI/900x900');
+  background-size: cover;
+  position: relative;
+  padding: 4rem;
+  text-align: center;
+  color: #fff;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+header:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(rgba(0,0,0,0.0), #111);
+}
+header figure {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 4rem;
+}
+
+section.intro {
+  text-align: center;
+}
+
+.flex-grid {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.flex-grid .col {
+  padding: 4rem;
+  border: 1px dashed purple;
+}
+
+
+/*
+--------------------------------------------------------
+# Buttons
+--------------------------------------------------------
+*/
+
+.btn {
+  font-size: 1.5rem;
+  text-align: center;
+  background: var(--theme-color-primary);
+  padding: 1rem 2rem;
+  color: #fff;
+  transition: all 0.20s ease-in-out;
+  cursor: pointer;
+  margin: 2rem 0;
+  border: 0;
+}
+.btn:active {
+  background: var(--theme-color-tertiary);
+  color: #000;
+}
+
+/*
+--------------------------------------------------------
+# Responsive
+--------------------------------------------------------
+*/
+
+@media screen and (min-width: 601px) {}
+
+@media screen and (min-width: 1401px) {}
