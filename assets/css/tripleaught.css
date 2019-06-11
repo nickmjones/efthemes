@@ -9,6 +9,9 @@
 :root {
   --font-family-headings: 'Playfair Display', Helvetica, Arial, sans-serif;
   --font-family-base: "Fira Sans", "Helvetica Neue", sans-serif;
+  --theme-color-primary: #FDBE1E;
+  --theme-color-secondary: #51a3a3;
+  --theme-color-tertiary: #cb904d;
 }
 
 /*
@@ -34,10 +37,6 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  background: var(--theme-color-primary);
-}
-
 /*
 --------------------------------------------------------
 # Type/Fonts
@@ -47,6 +46,7 @@ main {
 p {
   font-size: 1.25rem;
   line-height: 1.25;
+  color: rgba(255,255,255,0.6);
 }
 h1, h2, h3, h4, h5 {
   font-family: var(--font-family-headings);
@@ -119,7 +119,7 @@ a.with-pointer:after {
 */
 
 header {
-  background: #fff url('https://source.unsplash.com/xpcUYaZtplI/900x900');
+  background: #fff url('https://source.unsplash.com/m3m-lnR90uM/900x900');
   background-size: cover;
   position: relative;
   padding: 4rem;
@@ -154,6 +154,9 @@ header figure {
   position: relative;
   z-index: 1;
 }
+header figure h1 {
+  font-size: 5.25rem;
+}
 
 section {
   padding: 4rem;
@@ -169,7 +172,18 @@ section.intro {
 }
 .flex-grid .col {
   padding: 4rem;
-  border: 1px dashed purple;
+  text-align: center;
+}
+footer {
+  background: #000;
+  padding: 1rem;
+  text-align: center;
+}
+footer p {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: .5rem;
+  font-family: var(--font-family-headings);
 }
 
 
@@ -180,19 +194,28 @@ section.intro {
 */
 
 .btn {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
-  background: var(--theme-color-primary);
+  background: transparent;
   padding: 1rem 2rem;
   color: #fff;
   transition: all 0.20s ease-in-out;
   cursor: pointer;
   margin: 2rem 0;
   border: 0;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+.btn:hover {
+  background: var(--theme-color-tertiary);
 }
 .btn:active {
   background: var(--theme-color-tertiary);
   color: #000;
+}
+
+.btn--centered {
+  margin: 4rem auto;
 }
 
 /*
