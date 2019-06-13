@@ -4,14 +4,15 @@
 --------------------------------------------------------
 */
 
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Playfair+Display:400,700&display=swap');
 
 :root {
   --font-family-headings: 'Playfair Display', Times, Georgia, serif;
-  --font-family-base: Times, Georgia, serif;
+  --font-family-base: 'Lato', Helvetica, Arial, sans-serif;
   --theme-color-primary: #46bcb7;
   --theme-color-secondary: #ff715b;
-  --theme-color-tertiary: #4c5454;
+  --theme-color-tertiary: #031D44;
+  --theme-color-neutral: #BAC1B8;
 }
 
 /*
@@ -28,8 +29,8 @@ html {
 body {
   font-family: var(--font-family-base);
   color: #333;
-  background: var(--theme-color-primary) url('../images/giantsteps/nyc_skyline_bg.png') -50vh center no-repeat;
-  background-attachment: fixed;
+  background: var(--theme-color-neutral);
+  
 }
 
 * {
@@ -51,25 +52,7 @@ p {
 }
 h1, h2, h3, h4, h5 {
   font-family: var(--font-family-headings);
-  line-height: 1.25;
-  margin-bottom: .5rem;
-}
-h1 {
-  font-size: 4rem;
-  line-height: 1;
-  margin-bottom: 1.25rem;
-}
-h2 {
-  font-size: 3.25rem;
-}
-h3 {
-  font-size: 2.75rem;
-}
-h4 {
-  font-size: 2.25rem;
-}
-h5 {
-  font-size: 2rem;
+  margin-bottom: .7rem;
 }
 ul.plain {
   font-size: 1.25rem;
@@ -111,15 +94,15 @@ a:after {
 */
 
 .btn {
-  border-radius: 100px;
-  font-size: 1rem;
+  font-size: .7rem;
   text-align: center;
-  background: transparent;
-  padding: 1rem 2rem;
-  border: 2px solid #333;
+  background: var(--theme-color-secondary);
+  padding: .5rem 2rem;
+  border: 0;
   transition: all 0.20s ease-in-out;
   cursor: pointer;
-  margin: 2rem 0;
+  margin: 1rem 0 0;
+  border-radius: 2px;
 }
 .btn:hover {
   background: #d7d7d7;
@@ -135,54 +118,108 @@ a:after {
 --------------------------------------------------------
 */
 
-.hero {
-  padding: 8rem 0;
-}
-
 .wrapper {
-  width: 80vw;
-  padding: 0 4rem 4rem;
-  margin: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-.grid {
-  width: 100%;
+.page {
+  background: #fff;
+  margin: 4rem 4rem 1rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  max-width: 1200px;
+}
+
+.intro {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1rem;
-}
-.item {
-  padding: 2rem;
-  background: rgba(255,255,255,0.3);
-}
-.item--larger {
-  grid-column: 1 / span 2;
-}
-footer {
-  padding: 4rem;
-  margin: auto;
-  width: 80vw;
+  grid-template-columns: repeat(6, 1fr);
+  height: 70vh;
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    width: 100vw;
-    padding: 1rem;
-  }
-  .grid {
-    flex-flow: column wrap;
-  }
-  .group {
-    flex-flow: row wrap;
-  }
-  .item {
-    width: 100%;
-  }
-  .item:nth-child(odd) {
-    margin-right: 0;
-  }
-  footer {
-    padding: 2rem;
-    margin-top: 3rem;
-  }
+.intro__copy {
+  padding: 2rem;
+  grid-column: 1 / 3;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-flow: row wrap;
+}
+.intro__copy .top-text {
+  align-self: flex-start;
+}
+.intro__copy .bottom-text {
+  align-self: flex-end;
+  color: var(--theme-color-secondary);
+}
+
+.intro__copy h1 {
+  font-size: 7rem;
+}
+
+.intro__image {
+  padding: 0;
+  grid-column: 3 / 7;
+  height: 100%;
+  background: #d7d7d7;
+  overflow: hidden;
+}
+.intro__image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+.roadblock {
+  padding: 2rem;
+  text-align: center;
+  background: var(--theme-color-tertiary);
+  color: #fff;
+}
+
+.flex-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.flex-grid__cards {
+  padding: 2rem 1rem;
+  grid-column: 1 / 7;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.flex-grid__cards .card {
+  padding: 1rem;
+  flex: 1;
+}
+.flex-grid__copy {
+  padding: 2rem;
+  grid-column: 7 / 9;
+  display: flex;
+  background: var(--theme-color-tertiary);
+  color: #fff;
+}
+.flex-grid__copy p {
+  color: rgba(255,255,255,0.3);
+}
+.flex-grid__copy aside {
+  align-self: center;
+  justify-self: center;
+}
+
+footer {
+  padding: 1rem 1rem 2rem;
+  margin: auto;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+footer p {
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 1401px) {
 }
